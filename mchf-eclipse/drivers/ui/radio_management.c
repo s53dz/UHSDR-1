@@ -902,6 +902,9 @@ void RadioManagement_SetBandPowerFactor(uchar band)
     // now rescale to power levels <5 watts, is so-configured
     switch(ts.power_level)
     {
+    case    PA_LEVEL_0_05W:
+        pf_levelscale = 0.100;        // rescale for 1% of 5 watts (0.05 watts)
+        break;
     case    PA_LEVEL_0_5W:
         pf_levelscale = 0.316;        // rescale for 10% of 5 watts (0.5 watts)
         break;
